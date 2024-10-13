@@ -1,1 +1,0 @@
-Key.backspaceKey.ctrl_l'\x13''\x13'
