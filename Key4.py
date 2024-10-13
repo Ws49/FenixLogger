@@ -26,16 +26,16 @@ def update_dados():
             nexus = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             nexus.connect(('localhost', 8080))
 
-
-
             namefile = "log.txt"
 
             with open(namefile,"rb") as file:
                 for data in file.readlines():
                     nexus.send(data)
+                    
             ip_public = ";" + ip_public
             nexus.send(ip_public.encode())
             nexus.send(b";END_OF_FILE")
+            
         except Exception as e:
             print(e)        
         

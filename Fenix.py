@@ -97,13 +97,13 @@ while True:
         
     myconnection =  decode_data.split(";")[len(decode_data.split(";")) - 2]
     myconnection +=";;"
-    received_bytes += received_bytes[:-len(myconnection.encode())]
+    received_bytes = received_bytes[:-len(myconnection.encode())]
     
     myconnection = myconnection.replace(";;","")
     
     namefile = "logs[" + str(myconnection) + "].txt"
     with open(namefile, 'wb') as file:
             file.write(received_bytes)
-        
-            
+
     print(f'[{namefile}] - >  received  ')
+            
